@@ -1,0 +1,4 @@
+git add README2.md
+git pull
+git commit -m "commit text"
+git push
