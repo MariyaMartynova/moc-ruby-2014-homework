@@ -7,6 +7,7 @@ RESPONSE=
         "personal_data": {
             "name": "Mariya Martynova",
             "age": 24,
+            "genger": "female",
             "e-mail": "yashkina1502@gmail.com",
             "country": "Ukraine"
         },
@@ -48,6 +49,7 @@ module PersonalData
       define_method magic_words[3] do
         p "name: #{self.personal_data['name']}"
         p "age: #{self.personal_data['age']}"
+        p "genger: #{self.personal_data['genger']}"
         p "e-mail:#{self.personal_data['e-mail']}"
         p "country:#{self.personal_data['country']}"
         p "social_profiles:#{self.social_profiles.join ',' }"
@@ -88,6 +90,3 @@ if json_array.key?("person")
   person.parameters?
 
 end
-
-
-
