@@ -2,7 +2,7 @@
 require 'json'
 
 RESPONSE=
-   '{
+    '{
     "person": {
         "personal_data": {
             "name": "Mariya Martynova",
@@ -37,13 +37,13 @@ module PersonalData
     def magic_methods(*magic_words)
 
       define_method magic_words[0] do
-       p "Real magic word #{}"
+        p "Real magic word #{}"
       end
       define_method magic_words[1] do
-       p "Real magic word1 #{}"
-        end
+        p "Real magic word1 #{}"
+      end
       define_method magic_words[2] do
-       p "Real magic word2 #{}"
+        p "Real magic word2 #{}"
       end
       define_method magic_words[3] do
         p "name: #{self.personal_data['name']}"
@@ -52,11 +52,12 @@ module PersonalData
         p "country:#{self.personal_data['country']}"
         p "social_profiles:#{self.social_profiles.join ',' }"
         p "pets:#{self.pets['name']}"
-      end
-
+        p "hobby:#{self.additional_info['hobby']}"
       end
 
     end
+
+  end
 
   def self.included(base)
     base.extend(ClassMethods)
@@ -65,7 +66,7 @@ end
 
 json_array= JSON.parse(RESPONSE)
 
-# puts json_array
+puts json_array
 
 if json_array.key?("person")
 
@@ -81,10 +82,12 @@ if json_array.key?("person")
 
   p person.inspect
 
-person.adult?
-person.have_hobbies?
-person.have_pets?
-person.parameters?
+  person.adult?
+  person.have_hobbies?
+  person.have_pets?
+  person.parameters?
 
 end
+
+
 
