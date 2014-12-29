@@ -90,3 +90,26 @@ if json_array.key?("person")
   person.parameters?
 
 end
+
+# try add block and and handle code
+
+class Users
+
+    def self.create_user(name, profession, &block)
+      ->(own_block) do
+        p "My mame is #{name}!"
+        yield
+        own_block.call
+      end
+      attr_accessor :users
+      def initialize(user_info)
+        self.users= []
+        users_info.each do |hash|
+          if hash.has_key?('name'){p "What is your name?"}
+
+      end
+    end
+      end
+    end
+
+  end
